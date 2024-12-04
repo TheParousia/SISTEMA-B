@@ -10,13 +10,13 @@ def irpf(request):
         renda_bruta = request.POST.get('salario')
         dependentes = request.POST.get('dependentes')
 
-        renda_bruta = float(renda_bruta)
-        dependentes = int(dependentes)
+        renda_bruta = float(renda_bruta == '0' >=0)
+        dependentes = int(dependentes == '0'>=0)
 
         base_calculo = renda_bruta - (dependentes * 2240)
         aliquota = 0.275
 
-        if base_calculo <= 1903.98:
+        if base_calculo <= 2259.20:
             aliquota = 0
         elif base_calculo <= 2826.65:
             aliquota = 0.075
@@ -24,6 +24,8 @@ def irpf(request):
             aliquota = 0.15
         elif base_calculo <= 4664.68:
             aliquota = 0.225
+        elif base_calculo > 4664.68:
+            aliquota = 0.275
 
         imposto = base_calculo * aliquota
         salario_liquido = renda_bruta - imposto
@@ -39,3 +41,4 @@ def irpf(request):
         return render(request, 'irpf.html', contexto)
 
     return render(request, 'irpf.html')
+
