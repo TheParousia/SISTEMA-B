@@ -12,11 +12,13 @@ def irpf(request):
 
         renda_bruta = float(renda_bruta)
         dependentes = int(dependentes)
-
-        base_calculo = renda_bruta - (dependentes * 2240)
+        
+        # Base de Cálculos
+        base_calculo = renda_bruta - (dependentes * 189.59)
         aliquota = 0.275
 
-        if base_calculo <= 1903.98:
+        # Cáculo do IRRF
+        if base_calculo <= 2259.20:
             aliquota = 0
         elif base_calculo <= 2826.65:
             aliquota = 0.075
@@ -24,6 +26,8 @@ def irpf(request):
             aliquota = 0.15
         elif base_calculo <= 4664.68:
             aliquota = 0.225
+        elif base_calculo > 4664.68:
+            aliquota = 0.275
 
         imposto = base_calculo * aliquota
         salario_liquido = renda_bruta - imposto
