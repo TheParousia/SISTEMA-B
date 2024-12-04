@@ -1,0 +1,31 @@
+## Requisitos Funcionais para Cálculo do Imposto de Renda
+
+Objetivo: Desenvolver um sistema que calcule o Imposto de Renda Retido na Fonte (IRRF) de um funcionário com base na tabela fornecida, considerando também a quantidade de dependentes.
+
+Requisitos Funcionais:
+
+1. Cadastro do Funcionário:
+   Coletar as seguintes informações:
+     Nome completo
+     CPF
+     Salário base
+     Número de dependentes
+.
+2. Cálculo da Base de Cálculo:
+   Calcular a base de cálculo do IRRF, considerando o salário base e as deduções permitidas por lei ( neste caso somente dependentes).
+3. Aplicação da Alíquota:
+   Identificar a faixa de renda à qual o funcionário pertence com base na base de cálculo.
+   Aplicar a alíquota correspondente àquela faixa.
+4. Cálculo do Valor do Imposto:
+   Calcular o valor do imposto a ser retido na fonte, aplicando a alíquota sobre a base de cálculo e deduzindo a parcela a deduzir conforme a tabela.
+5. Consideração de Dependentes:
+   Aplicar as deduções por dependente permitidas pela legislação vigente - pesquise qual o calor da dedução por dependente para o ano de 2024.
+6. Exibição do Resultado:
+   Apresentar o resultado do cálculo do IRRF de forma clara e concisa, informando:
+     Base de cálculo
+     Alíquota aplicada
+     Valor do imposto a ser retido
+7. Validação de Dados:
+   Validar os dados de entrada para garantir que estejam dentro dos limites permitidos e sejam consistentes.
+8. Relatórios:
+   Gerar relatórios com os cálculos do IRRF para todos os funcionários, permitindo a análise e o controle dos valores retidos.

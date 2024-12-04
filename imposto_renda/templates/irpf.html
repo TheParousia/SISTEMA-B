@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imposto de Renda de Pessoa Fisica</title>
+</head>
+
+<body>
+    <h1>Cálculo de Idade</h1>
+
+    <img src="media/img/tabela_irpf.png" alt="">
+    <div id="resultado">
+        Sr(a) {{ nome }} <br>
+        Quantida de dependentes: {{ dependentes }} <br>
+        Renda bruta: R${{ renda_bruta }}<br>
+        Você deve: R${{ imposto }} de imposto de renda <br>
+        Salario liquido: R${{ salario_liquido }} <br>
+    </div>
+
+
+    <form action="" method="post">
+        {% csrf_token %}
+        <input type="text" name="nome">
+        <label for="nome">Nome:</label>
+
+        <input type="text" name="salario">
+
+        <input type="text" name="dependentes" placeholder="Dependentes">
+
+        <button type="submit">Calcular</button>
+    </form>
+</body>
+
+</html>
