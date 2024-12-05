@@ -13,6 +13,7 @@ def irpf(request):
 
         
 
+
         renda_bruta = float(renda_bruta)
         dependentes = int(dependentes)
         
@@ -22,6 +23,8 @@ def irpf(request):
         aliquota = {0, 0.075, 0.15, 0.225, 0.275}
 
         # Cáculo do IRRF
+
+      
         if base_calculo <= 2259.20:
             aliquota = 0
         elif base_calculo <= 2826.65:
@@ -52,3 +55,4 @@ def irpf(request):
         return render(request, 'irpf.html', contexto)
 
     return render(request, 'irpf.html')
+
