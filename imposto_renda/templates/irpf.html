@@ -13,27 +13,29 @@
     <img src="media/img/tabela_irpf.png" alt="">
     <div id="resultado">
         Sr(a) {{ nome }} <br>
+        Cpf: {{ cpf }} <br>
         Quantidade de dependentes: {{ dependentes }} <br>
+        Valor dos dependentes: R${{ valor_dependente }}<br>
         Renda bruta: R${{ renda_bruta }}<br>
         Você deve: R${{ imposto }} de imposto de renda <br>
         Salario liquido: R${{ salario_liquido }} <br>
+        Valor aliquota: {{ valor_aliquota }}%
     </div>
 
 
     <form action="" method="post">
         {% csrf_token %}
-        <input type="text" name="nome">
-        <label for="Nome">Nome:</label>
-               
-        <input type="text" name="Cpf">
-        <label for="cpf">cpf:</label>
-      
-        <input type="text" name="Salario">
-        <label for="Salario">Salário:</label>
-
-        <input type="text" name="Dependentes">
-        <label for="Dependentes">Dependentes:</label>
+        <br><label for="nome">Nome:</label>
+        <input required type="text" name="nome">
         
+        <label required for="nome">Cpf:</label>
+        <input required type="text" name="cpf">
+        
+        <label for="nome">Salario:</label>
+        <input required type="text" name="salario">
+
+        <input required type="text" name="dependentes" placeholder="Dependentes">
+
         <button type="submit">Calcular</button>
     </form>
 </body>
