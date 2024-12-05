@@ -10,12 +10,17 @@ def irpf(request):
         renda_bruta = request.POST.get('salario')
         dependentes = request.POST.get('dependentes')
 
-        renda_bruta = float(renda_bruta == '0' >=0)
-        dependentes = int(dependentes == '0'>=0)
 
-        base_calculo = renda_bruta - (dependentes * 2240)
+        renda_bruta = float(renda_bruta)
+        dependentes = int(dependentes)
+        
+        # Base de Cálculos
+        base_calculo = renda_bruta - (dependentes * 189.59)
         aliquota = 0.275
 
+        # Cáculo do IRRF
+
+      
         if base_calculo <= 2259.20:
             aliquota = 0
         elif base_calculo <= 2826.65:

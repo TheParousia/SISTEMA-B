@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <h1>Cálculo de Idade</h1>
+    <h1>Tabela de Imposto de Renda</h1>
 
     <img src="media/img/tabela_irpf.png" alt="">
     <div id="resultado">
@@ -22,22 +22,18 @@
 
     <form action="" method="post">
         {% csrf_token %}
-        
+        <input type="text" name="nome">
         <label for="Nome">Nome:</label>
-       
+               
         <input type="text" name="Cpf">
         <label for="cpf">cpf:</label>
-
-        {% csrf_token %}
+      
         <input type="text" name="Salario">
         <label for="Salario">Salário:</label>
 
         <input type="text" name="Dependentes">
         <label for="Dependentes">Dependentes:</label>
-
-        <input type="text" Dependentes="Dependentes">
         
-
         <button type="submit">Calcular</button>
     </form>
 </body>
